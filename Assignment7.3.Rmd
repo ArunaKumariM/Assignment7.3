@@ -1,0 +1,174 @@
+---
+title: "Newass"
+author: "Aruna"
+date: "23 November 2018"
+output: word_document
+---
+```{r}
+# assignment 7.3
+
+#1.  Create a box and whisker plot by class using mtcars dataset
+library(tidyr)
+library(plyr)
+par(mfcol=c(2,3))
+# Boxplot of MPG by Car Cylinders 
+boxplot(mpg~cyl,data=mtcars, main="Car Milage Data", 
+        xlab="Number of Cylinders", ylab="Miles Per Gallon", col = "cyan")
+
+# Boxplot of  Displacement by Car Cylinders 
+boxplot(disp~cyl,data=mtcars, main="Car Displacement Data", 
+        xlab="Number of Cylinders", ylab="Displacement (cu.in)", col = "cyan")
+
+# Boxplot of Gross horsepower by Car Cylinders 
+boxplot(hp~cyl,data=mtcars, main="Car Gross horsepower Data", 
+        xlab="Number of Cylinders", ylab="Gross horsepower", col = "cyan")
+
+# Boxplot of Rear axle ratio by Car Cylinders 
+boxplot(drat~cyl,data=mtcars, main="Car Rear axle ratio Data", 
+        xlab="Number of Cylinders", ylab="Rear axle ratio", col = "cyan")
+
+# Boxplot of Weight by Car Cylinders 
+boxplot(wt~cyl,data=mtcars, main="Car Weight Data", 
+        xlab="Number of Cylinders", ylab="Weight(1000 lbs)", col = "cyan")
+
+# Boxplot of qsec by Car Cylinders 
+boxplot(qsec~cyl,data=mtcars, main="Car 1/4 mile time Data", 
+        xlab="Number of Cylinders", ylab="1/4 mile time", col = "cyan")
+
+
+# next cateogry variable Vs
+
+par(mfcol=c(2,3))
+# Boxplot of MPG by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(mpg~vs,data=mtcars, main="Car Milage Data (0-Vshaped, 1-straight)", 
+        xlab="Engine Type (0-Vshaped, 1-straight)", ylab="Miles Per Gallon", col = "coral")
+
+# Boxplot of  Displacement by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(disp~vs,data=mtcars, main="Car Displacement Data", 
+        xlab="Engine Type", ylab="Displacement (cu.in)", col = "coral")
+
+# Boxplot of Gross horsepower by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(hp~vs,data=mtcars, main="Car Gross horsepower Data", 
+        xlab="Engine Type", ylab="Gross horsepower", col = "coral")
+
+# Boxplot of Rear axle ratio by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(drat~vs,data=mtcars, main="Car Rear axle ratio Data", 
+        xlab="Engine Type", ylab="Rear axle ratio", col = "coral")
+
+# Boxplot of Weight by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(wt~vs,data=mtcars, main="Car Weight Data", 
+        xlab="Engine Type", ylab="Weight(1000 lbs)", col = "coral")
+
+# Boxplot of qsec by Car Engine (0 = Vshaped, 1= straight) 
+boxplot(qsec~vs,data=mtcars, main="Car 1/4 mile time Data", 
+        xlab="Engine Type", ylab="1/4 mile time", col = "coral")
+
+```
+
+```{r}
+#Plot for Transmission variable
+par(mfcol=c(2,3))
+# Boxplot of MPG by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(mpg~am,data=mtcars, main="Car Milage Data ", 
+        xlab="Transmission Type(0 = automatic, 1 = manual)", ylab="Miles Per Gallon", col = "deeppink")
+
+# Boxplot of  Displacement by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(disp~am,data=mtcars, main="Car Displacement Data", 
+        xlab="Transmission Type", ylab="Displacement (cu.in)", col = "deeppink")
+
+# Boxplot of Gross horsepower by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(hp~am,data=mtcars, main="Car Gross horsepower Data", 
+        xlab="Transmission Type", ylab="Gross horsepower", col = "deeppink")
+
+# Boxplot of Rear axle ratio by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(drat~am,data=mtcars, main="Car Rear axle ratio Data", 
+        xlab="Transmission Type", ylab="Rear axle ratio", col = "deeppink")
+
+# Boxplot of Weight by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(wt~am,data=mtcars, main="Car Weight Data", 
+        xlab="Transmission Type", ylab="Weight(1000 lbs)", col = "deeppink")
+
+# Boxplot of qsec by Car Engine Transmission (0 = automatic, 1 = manual) 
+boxplot(qsec~am,data=mtcars, main="Car 1/4 mile time Data", 
+        xlab="Transmission Type", ylab="1/4 mile time", col = "deeppink")
+
+# plot for gear data
+par(mfcol=c(2,3))
+# Boxplot of MPG by Car Engine Number of forward gears 
+boxplot(mpg~gear,data=mtcars, main="Car Milage Data", 
+        xlab="Number of gears", ylab="Miles Per Gallon", col = "burlywood1")
+
+# Boxplot of  Displacement by Car Engine Number of forward gears 
+boxplot(disp~gear,data=mtcars, main="Car Displacement Data", 
+        xlab="Number of gears", ylab="Displacement (cu.in)", col = "burlywood1")
+
+# Boxplot of Gross horsepower by Car Engine Number of forward gears 
+boxplot(hp~gear,data=mtcars, main="Car Gross horsepower Data", 
+        xlab="Number of gears", ylab="Gross horsepower", col = "burlywood1")
+
+# Boxplot of Rear axle ratio by Car Engine Number of forward gears 
+boxplot(drat~gear,data=mtcars, main="Car Rear axle ratio Data", 
+        xlab="Number of gears", ylab="Rear axle ratio", col = "burlywood1")
+
+# Boxplot of Weight by Car Engine Number of forward gears 
+boxplot(wt~gear,data=mtcars, main="Car Weight Data", 
+        xlab="Number of gears", ylab="Weight(1000 lbs)", col = "burlywood1")
+
+# Boxplot of qsec by Car Engine Number of forward gears 
+boxplot(qsec~gear,data=mtcars, main="Car 1/4 mile time Data", 
+        xlab="Number of gears", ylab="1/4 mile time", col = "burlywood1")
+
+
+#plot for carburetors
+par(mfcol=c(2,3))
+# Boxplot of MPG by Car Engine Number of carburetors 
+boxplot(mpg~carb,data=mtcars, main="Car Milage Data", 
+        xlab="Number of carburetors", ylab="Miles Per Gallon", col = "bisque2")
+
+# Boxplot of  Displacement by Car Engine Number of carburetors 
+boxplot(disp~carb,data=mtcars, main="Car Displacement Data", 
+        xlab="Number of carburetors", ylab="Displacement (cu.in)", col = "bisque2")
+
+# Boxplot of Gross horsepower by Car Engine Number of carburetors 
+boxplot(hp~carb,data=mtcars, main="Car Gross horsepower Data", 
+        xlab="Number of carburetors", ylab="Gross horsepower", col = "bisque2")
+
+# Boxplot of Rear axle ratio by Car Engine Number of carburetors 
+boxplot(drat~carb,data=mtcars, main="Car Rear axle ratio Data", 
+        xlab="Number of carburetors", ylab="Rear axle ratio", col = "bisque2")
+
+# Boxplot of Weight by Car Engine Number of carburetors 
+boxplot(wt~carb,data=mtcars, main="Car Weight Data", 
+        xlab="Number of carburetors", ylab="Weight(1000 lbs)", col = "bisque2")
+
+# Boxplot of qsec by Car Engine Number of carburetors 
+boxplot(qsec~carb,data=mtcars, main="Car 1/4 mile time Data", 
+        xlab="Number of carburetors", ylab="1/4 mile time", col = "bisque2")
+
+par(mfcol= c(1,1))
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
